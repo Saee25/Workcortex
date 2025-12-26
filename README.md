@@ -14,7 +14,6 @@ A Python-based email extraction system that fetches emails from Gmail, extracts 
 
 ## 📁 Project Structure
 
-```
 Workcortex/
 ├── engine/
 │   ├── email_client.py      # Gmail IMAP client
@@ -25,7 +24,6 @@ Workcortex/
 ├── main.py                  # CLI interface
 ├── ui.py                    # Streamlit UI
 └── requirements.txt         # Dependencies
-```
 
 ## 🚀 Quick Start
 
@@ -68,6 +66,10 @@ streamlit run ui.py
 python main.py
 ```
 
+## 🎥 Demo
+
+<video controls src="20251226-1800-19.0503780.mp4" title="demo"></video>
+
 ## 🎮 UI Controls
 
 - **▶️ START** - Begin email extraction
@@ -76,24 +78,12 @@ python main.py
 - **⏹️ ABORT** - Stop execution immediately
 
 ## 📊 Live Execution Logs
-
-| Timestamp | Order | Step Description | Tool/App/URL/EXE | Status |
-|-----------|-------|------------------|------------------|--------|
-| 2025-12-26 22:30:15 | 1 | Initializing Gmail Connection | imaplib | STARTED |
-| 2025-12-26 22:30:17 | 1 | Connected to Gmail | IMAP SSL | SUCCESS |
-| 2025-12-26 22:30:20 | 2 | Found 45 emails | IMAP | SUCCESS |
-| 2025-12-26 22:30:25 | 3 | Extracted 127 unique IDs | Logic | SUCCESS |
-| 2025-12-26 22:30:27 | 4 | Saved to ./output/extracted_recipients.xlsx | File System | SUCCESS |
+![execution logs](image-1.png)
 
 ## 📝 Sample Output
 
 Excel file with deduplicated, sorted recipient emails:
-
-| Recipient Email |
-|----------------|
-| user1@example.com |
-| user2@example.com |
-| user3@example.com |
+![output](image-2.png)
 
 ## 🏗️ Architecture & Design Decisions
 
@@ -116,51 +106,13 @@ Excel file with deduplicated, sorted recipient emails:
 - **Live Logging**: Real-time table updates via Streamlit placeholders
 - **Security**: Environment variables, no hard-coded credentials
 
-## 🔍 Assumptions
-
-1. Gmail account with IMAP enabled and App Password configured
-2. Standard email "To" headers present
-3. Stable internet connection for IMAP operations
-4. Python 3.8+ with pip installed
-5. Write permissions for output directory
-6. Modern browser for Streamlit UI
-7. Single-user local execution
-8. Reasonable email volume (tested up to 1000 emails)
-
-## 🛠️ Troubleshooting
-
-**Authentication failed**
-- Verify App Password in `.env` file
-- Ensure 2FA is enabled on Gmail
-
-**No emails found**
-- Check sender email address is correct
-- Verify emails exist from that sender
-
-**Permission denied saving Excel**
-- Check output directory write permissions
-- Close Excel file if currently open
-
-**Streamlit UI not loading**
-- Check port 8501 is available
-- Try: `streamlit run ui.py --server.port 8502`
-
 ## � Dependencies
 
-```
 streamlit       # Web UI framework
 pandas          # Data manipulation
 openpyxl        # Excel file support
 python-dotenv   # Environment variables
-```
 
-## 🎥 Demo
-
-[Video demonstration will be added here]
-
-## 📸 Screenshots
-
-[Screenshots will be added here]
 
 ---
 
