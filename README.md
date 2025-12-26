@@ -66,10 +66,6 @@ streamlit run ui.py
 python main.py
 ```
 
-## 🎥 Demo
-
-<video controls src="20251226-1800-19.0503780.mp4" title="demo"></video>
-
 ## 🎮 UI Controls
 
 - **▶️ START** - Begin email extraction
