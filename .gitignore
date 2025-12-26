@@ -1,13 +1,6 @@
-# Environments
 venv/
 .env
-
-# Python cache
 __pycache__/
 *.pyc
-
-# Excel temporary files (seen in your output folder)
 ~$*.xlsx
-
-# Output files (usually you don't want to push generated data)
 output/*.xlsx
