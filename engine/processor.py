@@ -6,8 +6,17 @@ class DataProcessor:
     def extract_clean_emails(raw_recipient_list):
         if not raw_recipient_list:
             return []
+        
+        # Flatten list of lists into a single list
+        all_emails = []
+        for item in raw_recipient_list:
+            if isinstance(item, list):
+                all_emails.extend(item)
+            elif item:
+                all_emails.append(item)
+        
         # Get unique emails, lowercase them, and remove empty ones
-        distinct_emails = sorted(list(set([e.strip().lower() for e in raw_recipient_list if e])))
+        distinct_emails = sorted(list(set([e.strip().lower() for e in all_emails if e])))
         return distinct_emails
 
     @staticmethod
